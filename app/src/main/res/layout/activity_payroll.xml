@@ -1,0 +1,596 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:layoutDirection="rtl"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:layoutDirection="rtl"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:subtitleTextColor="#c8ffffff"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                app:titleTextColor="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/vazir"
+                        android:gravity="right|center"
+                        android:text="فیش حقوقی 1402"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/vazir"
+                        android:gravity="right|center"
+                        android:text="بر اساس بخش‌نامه وزارت کار و قانون تأمین اجتماعی"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/crdCalculate"
+            android:layout_below="@+id/appbar"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/relWages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_payroll_groupbox">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inpWages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="-8dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/txtWages"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vazir"
+                            android:hint="میزان حقوق پایه (تومان)"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:layoutDirection="ltr"
+                            android:maxLength="10"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorDark"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:theme="@style/editTextComponentColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/chkWages"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/inpWages"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:checked="true"
+                        android:clickable="false"
+                        android:fontFamily="@font/vazir"
+                        android:layoutDirection="rtl"
+                        android:text="حداقل حقوق پایه"
+                        android:textColor="@color/colorDark"
+                        android:textSize="12.5dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/lblWagesDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chkWages"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginRight="19dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/vazir"
+                        android:text="حداقل حقوق پایه در سال1402 برابر x,xxx,xxx,xxx ریال است."
+                        android:textColor="@color/color100"
+                        android:textSize="11.5dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/relWages"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/vazir"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="حقوق پایه"
+                    android:textColor="@color/color75"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/relChilds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relWages"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_payroll_groupbox"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <EditText
+                            android:id="@+id/txtChilds"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vazir"
+                            android:hint="تعداد فرزندان"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:layoutDirection="ltr"
+                            android:maxLength="1"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorDark"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:theme="@style/editTextComponentColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/lblChildsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/relChilds"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/vazir"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="حق اولاد"
+                    android:textColor="@color/color75"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/lnComputational"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relChilds"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_payroll_groupbox"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdShift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardBackgroundColor="#eee"
+                        app:cardCornerRadius="7dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/vazir"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:text="شیفت کاری"
+                                android:textColor="@color/color75"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/lblShift"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/vazir"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="انتخاب نشده"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inpExtra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <EditText
+                            android:id="@+id/txtExtra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vazir"
+                            android:hint="تعداد ساعات اضافه کاری"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:layoutDirection="ltr"
+                            android:maxLength="3"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorDark"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:theme="@style/editTextComponentColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblComputationalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/lnComputational"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/vazir"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="اطلاعات محاسباتی"
+                    android:textColor="@color/color75"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/lnDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lnComputational"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_payroll_groupbox"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardBackgroundColor="#eee"
+                        app:cardCornerRadius="7dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/vazir"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:text="ماه مورد محاسبه"
+                                android:textColor="@color/color75"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/lblMonth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/vazir"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="انتخاب نشده"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/crdDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#eee"
+                        app:cardCornerRadius="7dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/vazir"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:text="تاریخ محاسبه"
+                                android:textColor="@color/color75"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/lblDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/vazir"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="تعیین نشده"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblDateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/lnDate"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/vazir"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="اطلاعات زمانی"
+                    android:textColor="@color/color75"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/relOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lnDate"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_payroll_groupbox"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <EditText
+                            android:id="@+id/txtName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی "
+                            android:fontFamily="@font/vazir"
+                            android:hint="نام و نام خانوادگی (مثال: محمد خرّم)"
+                            android:imeOptions="actionDone"
+                            android:layoutDirection="rtl"
+                            android:nextFocusDown="@+id/txtStoreName"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorAccent2"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:theme="@style/editTextComponentColor" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/lblOtherTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/relOther"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/vazir"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="سایر اطلاعات"
+                    android:textColor="@color/color75"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdResume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relOther"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clipToPadding="false"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_arrow_bottom_light_21dp"
+                        android:drawablePadding="12dp"
+                        android:fontFamily="@font/vazir"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="8dp"
+                        android:text="ادامه"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </ScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdCalculate"
+            android:layout_width="216dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clipToPadding="false"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                android:fontFamily="@font/vazir"
+                android:gravity="center"
+                android:text="محاسبه فیش حقوقی"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13dp" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:itemTextAppearance="@style/NavigationViewStyle"
+        app:itemTextColor="@color/colorDark"
+        app:menu="@menu/drawer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="8dp"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/vazir"
+                android:text="ارائه شده توسط گروه نرم\u200cافزاری کارافزار"
+                android:textColor="@color/color75"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/lblVI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/vazir"
+                android:text="نسخۀ 1.5.2"
+                android:textColor="@color/color100"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

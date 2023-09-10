@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="محاسبات">
+        <menu>
+            <group android:id="@+id/grp_0">
+                <item
+                    android:id="@+id/navChilds"
+                    android:icon="@drawable/nav_childs_accent_24dp"
+                    android:title="محاسبه حق اولاد" />
+
+                <item
+                    android:id="@+id/navShift"
+                    android:icon="@drawable/nav_shift_accent_24dp"
+                    android:title="محاسبه شیفت کاری" />
+
+                <item
+                    android:id="@+id/navNight"
+                    android:icon="@drawable/nav_night_accent_24dp"
+                    android:title="محاسبه شب کاری" />
+
+                <item
+                    android:id="@+id/navExtra"
+                    android:icon="@drawable/nav_extra_accent_24dp"
+                    android:title="محاسبه اضافه کاری" />
+            </group>
+        </menu>
+    </item>
+</menu>

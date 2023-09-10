@@ -1,0 +1,14 @@
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#0f9b55</color>
+    <color name="colorAccent2">#545870</color>
+    <color name="colorRed">#ba1e35</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorLine">#e1e1e4</color>
+    <color name="colorHint">#b9b6be</color>
+    <color name="colorBSD">#7d858f</color>
+    <color name="color100">#969696</color>
+    <color name="color75">#4b4b4b</color>
+    <color name="colorDark">#2a343b</color>
+</resources>

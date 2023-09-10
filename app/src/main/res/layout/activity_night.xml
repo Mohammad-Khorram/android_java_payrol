@@ -1,0 +1,215 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layoutDirection="rtl"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            app:subtitleTextColor="#c8ffffff"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+            app:titleTextColor="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/vazir"
+                    android:gravity="right|center"
+                    android:text="محاسبه شب\u200cکاری"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/vazir"
+                    android:gravity="right|center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/relWages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bg_payroll_groupbox">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inpWages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="-8dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/txtWages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/vazir"
+                android:hint="میزان حقوق پایه (تومان)"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:layoutDirection="ltr"
+                android:maxLength="10"
+                android:paddingTop="4dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textColor="@color/colorDark"
+                android:textColorHint="@color/colorHint"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:theme="@style/editTextComponentColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/chkWages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inpWages"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="6dp"
+            android:checked="true"
+            android:fontFamily="@font/vazir"
+            android:layoutDirection="rtl"
+            android:text="حداقل حقوق پایه"
+            android:textColor="@color/colorDark"
+            android:textSize="12.5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblWagesDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chkWages"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="-6dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/vazir"
+            android:text="حداقل حقوق پایه در سال1402 برابر x,xxx,xxx,xxx ریال است."
+            android:textColor="@color/color100"
+            android:textSize="11.5dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/relWages"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-11dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/vazir"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:text="حقوق پایه"
+        android:textColor="@color/color75"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/relNight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relWages"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bg_payroll_groupbox">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/txtNight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/vazir"
+                android:hint="تعداد ساعات شب\u200cکاری"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:layoutDirection="ltr"
+                android:maxLength="3"
+                android:paddingTop="4dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textColor="@color/colorDark"
+                android:textColorHint="@color/colorHint"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:theme="@style/editTextComponentColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/relNight"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-11dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/vazir"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:text="شب\u200cکاری"
+        android:textColor="@color/color75"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relNight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/bg_result"
+        android:fontFamily="@font/vazir"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="16dp"
+        android:text="میزان شب\u200cکاری: 0 تومان"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+</RelativeLayout>

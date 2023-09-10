@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="5.5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_bsd_dragdrop_indicator" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/vazir"
+        android:gravity="center"
+        android:paddingTop="32dp"
+        android:text="تأیید اطلاعات"
+        android:textColor="@color/colorDark"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblInfoBSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/vazir"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.3"
+        android:textColor="@color/color100"
+        android:textSize="13.5dp" />
+
+    <Button
+        android:id="@+id/btnCalculateBSD"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/selectableItemBackground"
+        android:drawableRight="@drawable/ic_calculate_accent_24dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/vazir"
+        android:gravity="right|center"
+        android:paddingRight="16dp"
+        android:text="محاسبه فیش حقوقی"
+        android:textColor="@color/colorAccent"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnEditBSD"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/selectableItemBackground"
+        android:drawableRight="@drawable/ic_edit_dark_24dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/vazir"
+        android:gravity="right|center"
+        android:paddingRight="16dp"
+        android:text="اصلاح اطلاعات"
+        android:textColor="@color/colorBSD"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+</LinearLayout>

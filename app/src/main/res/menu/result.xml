@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/actCalculate"
+        android:icon="@drawable/ic_calculate_light_24dp"
+        android:title="محاسبه مجدد فیش حقوقی"
+        app:showAsAction="always" />
+</menu>
